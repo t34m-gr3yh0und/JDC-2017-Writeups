@@ -1,7 +1,10 @@
 # Intended Solutions for FoodPolar
 
 ## Setting up the webserver
-The OVA file can be downloaded from here.
+The OVA file can be downloaded from [here](https://drive.google.com/file/d/10EaflJ9wPBx54hAfpaPZmun4tMae8XIM/view?usp=sharing).
+
+SHA256  AFE3E2A4EF07FDBE200C59E5864A1C8133429A294468C4954268DB687880EFD6
+
 The credential is osboxes:osboxes.org
 
 By default the virtualbox network setting is NAT network. 
