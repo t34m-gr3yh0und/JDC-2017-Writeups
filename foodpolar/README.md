@@ -145,7 +145,7 @@ I proceeded to try to test an SQL injection by searching with a single quote. Th
 ![SQLqueryLeaked]
 By scrolling down to see the traceback message, we can clearly see partially the source code of `/var/www/JDC2017-webapp/foodpolar/cupcake/views.py`
 
-```sql
+```python
 "SELECT id, name, salesprice, usualprice, is_onsales FROM cupcake_cupcake WHERE name LIKE '" + keyword + "'")
 ```
 
@@ -217,6 +217,7 @@ We can't use ifconfig to test for RCE because ifconfig outputs on stdout.
 From my practices, we can try the following 2 commands and see if it works.
 
 stdout:		;cat /etc/passwd #
+
 stderr:		;cat /etc/shadow #
 
 ![RCEProven1]
