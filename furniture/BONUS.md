@@ -31,6 +31,6 @@ As mentioned above, you can fix this by changing `==` to `===`.
 ```php
 if (md5($s) === '0e689360761328193896196672040289')
 ```
-> Note: Due to the requirement of the competition, you are not allowed to the hash or the displaying of the flag.
+> Note: Due to the requirement of the competition, you are not allowed to change the hash or the displaying of the flag.
 
 After this vulnerability is fixed, **IF** the attacker can still somehow guess original string or reverse the MD5 hash, this flag will still be displayed. This is intentional as original writer would like to give some **bonus** points if the attacker is willingly to put in extra effort to guess/reverse it.
