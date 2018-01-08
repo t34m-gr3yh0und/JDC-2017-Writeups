@@ -2,15 +2,16 @@
 
 # Machine Download
 1. [Google Drive Link][ovadownload]
-	> MD5  => **90940441d994194351f97d46f7f41851**
-	> SHA1 => **e43d15f07c70f820f32e3970c076483c08d1c449**
+> MD5  => **90940441d994194351f97d46f7f41851**
+
+> SHA1 => **e43d15f07c70f820f32e3970c076483c08d1c449**
 
 # Challenges
-1. [URL Path)][ditr]
+1. [URL Path][ditr]
 2. [Bonus Page][bs]
 3. [Troubleshoot Page][trbl]
-4. [Product Page (SQLi)][prod]
-5. [Privilege Escalation (Root shell)][privesc]
+4. [Product Page][prod]
+5. [Privilege Escalation][privesc]
 
 # System Defenses
 1. [IPtables][iptables]
