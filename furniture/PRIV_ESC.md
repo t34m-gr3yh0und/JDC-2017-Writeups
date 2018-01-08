@@ -1,7 +1,7 @@
 # Challenge (Privilege Escalation)
 > This is assuming that you have already gotten interactive shell.
 
-This challenge is created to give attacker and easy way to obtain shell. Because the user `www-data` is given some `sudo` permissions.
+This challenge is created to give attacker an easy way to obtain shell. Because the user `www-data` is given some `sudo` permissions.
 
 You can run below to see what `sudo` permissions your user has.
 ```sh
