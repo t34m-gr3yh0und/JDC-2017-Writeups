@@ -6,6 +6,11 @@
 
 > SHA1 => **e43d15f07c70f820f32e3970c076483c08d1c449**
 
+Username: osboxes
+
+Password: osboxes
+
+
 # Challenges
 1. [URL Path][ditr]
 2. [Bonus Page][bs]
